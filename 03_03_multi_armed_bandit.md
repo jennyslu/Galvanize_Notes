@@ -63,3 +63,11 @@
   - softmax: Choose the bandit random in proportion to its estimated value. Happens to be same as Boltzmann distribution. Softmax function gives probability distribution over K different possible outcomes (i.e. K bandits). We do not just play the one with the maximum value. There is always some probability that we will play any of them, but we are weighting them based on the reward that they have paid out in the past. Depends _a lot_ on τ. If τ is large, it basically becomes uniform (i.e. play all equally). If τ is small, we basically keep playing the first one to pay out over and over.
 
   - Bayesian bandit: Treat each bandit as a beta distribution and look at their posterior distributions. We have website that we will use as our prior (passing baseline conversion and 1-baseline as shape parameters). Anytime someone comes in, we draw from each of the beta distributions for _each version of the website_ and then, whichever is higher - we send that person to the page that this highest number came from. We essentially always end up playing the best one.
+
+# Afternoon Breakout
+
+In the frequentist world, the thing we are investigating is a fixed element and its probability is the average result given an infinite number of trials. The Bayesian approach is that probabilities measure beliefs abou the outcome. In this case, there is no need - nor is there any meaningful discussion - to talk about what happens with an infinite number of trials.
+
+Frequentist hypothesis tests return p-values, which are both hard to understand and hard to make business decisions upon. A Bayesian approach, on the other hand, returns a posterior probability distribution that is more easily understood than a p-value. It can also yield expected values and other metrics that make for easier decision making
+
+Personally, I find Bayesian statistics to be a little unsettling. Maybe it's because of my background and lack of exposure to it but I do think there is something to be said about the safety and comfort you get from the 'strength of numbers' for lack of better terminology.

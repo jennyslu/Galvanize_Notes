@@ -91,4 +91,22 @@ When λ becomes large enough we are essentially predicting the mean because the 
 
 sklearn calls λ alpha.
 
-All models are classes. Instances have fit() method, predict() method, and score() method. 
+All models are classes. Instances have fit() method, predict() method, and score() method.
+
+## Example
+
+1. Clean up X, etc.
+
+2. Decide we want to do linear regression.
+
+3. Linear regression too much so we decide to do lasso and ridge instead.
+
+4. Choose set of alphas to try
+
+5. Do k-fold CV on both ridge and lasso models for each alpha. (Ultimately train and validate k\*number of alpha models)
+
+6. Look at mean scoring metric (i.e. average of k folds) for each of the models. Decide which alpha and model (ridge or lasso) was best.
+
+7. Throw away all these models. Take chosen model and .fit(X_train) <- on all of X data.
+
+8. Get result by scoring final trained model from step 7 on X_test. This is our estimate of what true error will be for model. 
